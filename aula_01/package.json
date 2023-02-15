@@ -1,0 +1,23 @@
+{
+  "name": "desenvolvimento_web_ii",
+  "version": "1.0.0",
+  "description": "Curso: Desenvolvimento de Software Multiplataforma (Fatec - Franca/SP)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/jpfalcuci/dsm2-desenvolvimento_web_ii.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/jpfalcuci/dsm2-desenvolvimento_web_ii/issues"
+  },
+  "homepage": "https://gitlab.com/jpfalcuci/dsm2-desenvolvimento_web_ii#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
