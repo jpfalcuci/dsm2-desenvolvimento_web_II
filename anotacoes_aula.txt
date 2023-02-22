@@ -1,0 +1,28 @@
+git config --global user.name user
+git config --global user.mail mail
+
+cd diretorio (change directory)
+
+git clone https://gitlab.com/user/repositorio
+
+echo Minha primeira API >> README.md    - windows e linux
+touch Minha primeira API >> README.md   - linux
+
+npm e yarn são ... do framework node, npm é mais fácil
+netfly e heroku p/ hospedar grátis
+
+
+node -v => versão do node
+npm init -y => cria package.json
+npm install express     ou      npm i express   => biblioteca de servidor/serviço
+npm i express nodemon => sincroniza o serviço em tempo real
+
+node index.js => inicia servidor
+
+git status
+git add -a
+git commit -m "Aula 01"
+git push
+
+adicionar "start": "nodemon index.js" dentro de "script" dentro do arquivo package.json
+$ npm start
