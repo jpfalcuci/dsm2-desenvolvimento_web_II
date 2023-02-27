@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 - Intro Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ titulo }}</h1>
+        <p>{{ msg }}</p>
+        <h2>Olá {{ nome }}, você está logado</h2>
+        <p>{{ testFunc() }}</p>
+        <p>A soma dos valores 2 e 5 é {{ soma() }}</p>
+    </div>
+
+    <script>
+        // "Desconstruindo" o método createApp() => Importa apenas esta função da biblioteca Vue.
+        const { createApp } = Vue;
+        // É uma boa prática que faça isso apenas com os métodos que forem utilizados, ao invés de importar a biblioteca toda. Também é uma boa prática de clean code.
+
+        createApp({
+            data(){
+                return {
+                    titulo: "Bem vindos à primeira aula de Vue",
+                    msg: "Estamos utilizando o Vue3.",
+                    nome: "John"
+                }
+            },
+            methods: {
+                testFunc: () => {
+                    return "Este é o retorno da função"
+                },
+                soma: () => {
+                    let x = 2;
+                    let y = 5;
+                    return x + y;
+                }
+            }
+        }).mount("#app");
+    </script>
+</body>
+</html>
