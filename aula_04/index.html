@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04 - V-bind e v-on</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Trabalhando com {{ titulo }}</h1>
+        <h1 v-once>Trabalhando com {{ titulo }}</h1>
+        <!-- <a v-bind:href="link">Google</a> -->
+        <a :href="link">Google</a>
+
+        <h1>Trabalhando com V-on</h1>
+        <input type="text" v-label="titulo" v-model="caixaTexto">
+        <!-- <button v-on:click="alterarValor">Enviar</button> -->
+        <button @click="alterarValor">Enviar</button>
+        <br>
+        <span>{{ titulo }}</span>
+
+        <h1>Soma</h1>
+        <p>Numero 1</p>
+        <input type="text" v-model="numero1">
+        <br>
+        <p>Numero 2</p>
+        <input type="text" v-model="numero2">
+        <br>
+        <button @click="soma">Somar</button>
+        <br>
+        <span>O resultado da soma é: {{ resultado }}</span>
+    </div>
+</body>
+</html>
+
+<script>
+    const { createApp } = Vue;
+
+    createApp({
+        data() {
+            return {
+                titulo: "Links",
+                link: "https://google.com",
+                caixaTexto: "",
+                numero1: 0,
+                numero2: 0,
+                resultado: 0
+            }
+        },
+        methods: {
+            alterarValor: function() {
+                this.titulo = this.caixaTexto;
+            },
+            soma: function () {
+                this.resultado = parseInt(this.numero1) + parseInt(this.numero2);
+            }
+        }
+    }).mount("#app");
+</script>
