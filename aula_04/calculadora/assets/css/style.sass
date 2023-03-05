@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500&display=swap')
+
+$fonte: 'Inconsolata', monospace
+$cor-fundo: #c5c5c5
+$cor-display: #eaeaea
+
+$cor-botoes: #e3e3e3
+$cor-botao-hover: #d5d5d5
+$cor-botao-clique: #bfbfbf
+
+$cor-limpa: #bc8c8c
+$cor-limpa-hover: #b37373
+$cor-limpa-clique: #8a6b6b
+
+$cor-igual: #748e6d
+$cor-igual-hover: #628359
+$cor-igual-clique: #4c6246
+
+$cor-botoes-op: #6d838e
+$cor-botoes-op-hover: #546d79
+$cor-botoes-op-clique: #415158
+
+
+*
+    font-family: $fonte
+
+#app
+    display: grid
+    width: 300px
+    height: 400px
+    grid-template-areas: "title title title title" "result result result result" "clear clear div mult" "num7 num8 num9 sub" "num4 num5 num6 sum" "num1 num2 num3 equal" "num0 num00 dot equal"
+    grid-template-rows: 0.4fr 1.2fr 1fr 1fr 1fr 1fr 1fr
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    text-align: center
+    margin: 50px auto
+    background-color: $cor-fundo
+    padding: 10px
+    border-radius: 15px    
+    
+    button, h1, h2
+        margin: 3px
+        border-radius: 10px
+
+    button
+        font-size: 1.35rem
+        background-color: $cor-botoes
+        
+        &:hover
+            background-color: $cor-botao-hover
+        
+        &:active
+            background-color: $cor-botao-clique
+
+    h1, h2
+        align-content: center
+
+    #title
+        grid-area: title
+        background-color: $cor-botoes
+        align-self: center
+        height: 80%
+
+    #display
+        grid-area: result
+        text-align: right
+        background-color: $cor-display
+        align-self: center
+        height: 80%
+        padding-right: 10px
+        font-size: 1.6rem
+
+    #clear
+        grid-area: clear
+        background-color: $cor-limpa
+
+        &:hover
+            background-color: $cor-limpa-hover
+        
+        &:active
+            background-color: $cor-limpa-clique
+
+    
+    #sum, #sub, #div, #mult
+        background-color: $cor-botoes-op
+
+        &:hover
+            background-color: $cor-botoes-op-hover
+        
+        &:active
+            background-color: $cor-botoes-op-clique
+
+
+    #sum
+        grid-area: sum
+
+    #sub
+        grid-area: sub
+
+    #div
+        grid-area: div
+    
+    #mult
+        grid-area: mult
+
+    #dot
+        grid-area: dot
+
+    #equal
+        grid-area: equal
+        background-color: $cor-igual
+
+        &:hover
+            background-color: $cor-igual-hover
+        
+        &:active
+            background-color: $cor-igual-clique
+
+
+    #num0
+        grid-area: num0
+
+    #num00
+        grid-area: num00
+
+    #num1
+        grid-area: num1
+    
+    #num2
+        grid-area: num2
+
+    #num3
+        grid-area: num3
+
+    #num4
+        grid-area: num4
+
+    #num5
+        grid-area: num5
+
+    #num6
+        grid-area: num6
+
+    #num7
+        grid-area: num7
+    
+    #num8
+        grid-area: num8
+    
+    #num9
+        grid-area: num9
