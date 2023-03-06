@@ -87,23 +87,9 @@
                 if(this.number2 != "") {
                     this.number1 = parseFloat(this.number1);
                     this.number2 = parseFloat(this.number2);
-                    if(this.operator === " + ") {
-                        this.result = (this.number1 + this.number2).toFixed(2);
-                        this.result = this.convertToInt(this.result);
-                        this.display += ` = ${this.result}`;
-                    } else if (this.operator === " - ") {
-                        this.result = (this.number1 - this.number2).toFixed(2);
-                        this.result = this.convertToInt(this.result);
-                        this.display += ` = ${this.result}`;
-                    } else if (this.operator === " * ") {
-                        this.result = (this.number1 * this.number2).toFixed(2);
-                        this.result = this.convertToInt(this.result);
-                        this.display += ` = ${this.result}`;
-                    } else {
-                        this.result = (this.number1 / this.number2).toFixed(2);
-                        this.result = this.convertToInt(this.result);
-                        this.display += ` = ${this.result}`;
-                    }
+                    this.result = eval(this.number1 + this.operator + this.number2).toFixed(2);
+                    this.result = this.convertToInt(this.result);
+                    this.display += ` = ${this.result}`;
                     this.end = true;
                 }
             }
