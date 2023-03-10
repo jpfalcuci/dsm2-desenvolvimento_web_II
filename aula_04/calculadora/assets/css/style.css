@@ -26,6 +26,7 @@
 #app button {
   font-size: 1.35rem;
   background-color: #e3e3e3;
+  border: none;
 }
 
 #app button:hover {
