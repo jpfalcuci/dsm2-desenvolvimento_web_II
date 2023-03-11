@@ -101,18 +101,20 @@
             },
             onKeyPress(event) {
                 let key = event.key;
-                const validKeys = /^[0-9+*/\-,.\s]+$/;
+                const ops = /[+\-*/]/;
+                const del = ['Backspace', 'Delete', 'Escape'];
+                const dot = ['.', ',', ';'];
 
-                if (validKeys.test(key)) {
-                    if (!isNaN(key) || key === '.' || key === ',') {
-                        this.addNum(key === '.' || key === ',' ? '.' : key);
-                    } else {
-                        this.addOp(key)
-                    }
+                if(!isNaN(key)) {
+                    this.addNum(key);
+                } else if(dot.includes(key)) {
+                    this.addNum('.')
+                } else if(ops.test(key)) {
+                    this.addOp(key);
+                } else if(del.includes(key)) {
+                    this.clear();
                 } else if(key == 'Enter') {
                     this.equal();
-                } else if(key == 'Backspace' || key == 'Delete' || key == 'Escape') {
-                    this.clear();
                 }
             }
         }
