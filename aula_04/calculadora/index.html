@@ -48,6 +48,12 @@
                 end: false
             }
         },
+        mounted() {
+            window.addEventListener('keydown', this.onKeyPress);
+        },
+        beforeDestroy() {
+            window.removeEventListener('keydown', this.onKeyPress);
+        },
         methods: {
             addNum(num) {
                 if(this.end === true) {
@@ -91,6 +97,22 @@
                     this.result = this.convertToInt(this.result);
                     this.display += ` = ${this.result}`;
                     this.end = true;
+                }
+            },
+            onKeyPress(event) {
+                let key = event.key;
+                const validKeys = /^[0-9+*/\-,.\s]+$/;
+
+                if (validKeys.test(key)) {
+                    if (!isNaN(key) || key === '.' || key === ',') {
+                        this.addNum(key === '.' || key === ',' ? '.' : key);
+                    } else {
+                        this.addOp(key)
+                    }
+                } else if(key == 'Enter') {
+                    this.equal();
+                } else if(key == 'Backspace' || key == 'Delete') {
+                    this.clear();
                 }
             }
         }
