@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="exercicio_01.js"></script>
+        <title>Exercício 01</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <style>
+        .classe--vue {
+            color: red;
+            font-style: italic;
+        }
+        .classe--vue:hover {
+            color: darkred;
+        }
+        .classe--vue::before {
+            content: "♠ ";
+        }
+    </style>
+    <body id="app">
+        <h1>Exercícios</h1>
+        <!-- Criar um alerta:
+        Crie um botão que, ao ser clicado, exibe um alerta com uma mensagem. Use a diretiva v-on:click para fazer a ação acontecer.-->
+        <h2>Alerta com VUE</h2>
+        <button @click="alert()">Clique aqui</button>
+        <hr />
+        <!-- Crie uma imagem usando o Vue. Use a sintaxe <img v-bind:src="url"> e defina a variável url no Vue. -->
+        <h2>Imagem com VUE</h2>
+        <img v-bind:src="url" alt="" height="120" />
+        <hr />
+        <h1>Desafios</h1>
+        <!-- Adicione uma classe CSS a um elemento usando o Vue. Use a sintaxe <div v-bind:class="nomeDaClasse">Elemento com classe</div> e defina a variável nomeDaClasse no Vue.-->
+        <h2>Classe CSS</h2>
+        <div v-bind:class="nomeDaClasse">Elemento com classe</div>
+        <hr />
+        <!-- DESAFIO -->
+        <!-- Mostre ou esconda um elemento usando o Vue. Use a sintaxe <div v-if="mostrar">Elemento a ser mostrado/ocultado</div> e defina a variável mostrar no Vue -->
+        <h2>Mostre ou esconda</h2>
+        <button @click="toggleMostrar">Mostrar/Esconder</button>
+        <div v-if="mostrar">
+            <p>Este é o elemento a ser mostrado/ocultado.</p>
+        </div>
+    </body>
+</html>
+<script>
+    const { createApp } = Vue;
+    createApp({
+        data() {
+            return {
+                url: "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2021/05/csgo-chickens-550x309.jpg",
+                nomeDaClasse: "classe--vue",
+                mostrar: true
+            }
+        },
+        methods: {
+            alert() {
+                window.alert("Alerta com VueJS");
+            },
+            toggleMostrar() {
+                this.mostrar = !this.mostrar;
+            }
+        }
+    }).mount("#app");
+</script>
