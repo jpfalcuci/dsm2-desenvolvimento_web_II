@@ -11,9 +11,12 @@ createApp({
             end: false
         }
     },
+    // Adiciona o evento de escuta do teclado quando o objeto é montado na página
     mounted() {
         window.addEventListener('keydown', this.onKeyPress);
     },
+    // Remove o evento de escuta quando o objeto está prestes a ser destruído
+    // Importante para remover o evento quando não estiver mais em uso e evitar vazamentos de memória
     beforeDestroy() {
         window.removeEventListener('keydown', this.onKeyPress);
     },
