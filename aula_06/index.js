@@ -21,6 +21,14 @@ app.get('/getAluno', (req, res) => {
     res.send(`O aluno de ID: ${id} foi encontrado!`)
 })
 
+app.post('/includeAluno', (req, res) => {
+    const { nome } = req.body
+    res.send(`<h1>Olá ${nome}, cê tá bão?`)
+})
+
+// Thunder Cliente => Post localhost:8080/includeAluno
+// { "nome": "João Paulo" }
+
 /*
 npm init -y => cria package.json
 npm i express
