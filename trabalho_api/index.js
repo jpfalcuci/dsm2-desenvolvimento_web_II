@@ -47,6 +47,7 @@ app.get('/', (req, res) => {
     if (tarefas) {
         res.json(tarefas);
     } else {
+        // Erro 500: Internal Server Error (Erro interno do servidor)
         res.status(500).json({ erro: "Erro ao ler arquivo" });
     }
 })
@@ -59,6 +60,7 @@ app.get('/tarefa/:id', (req, res) => {
     if (tarefa) {
         res.json(tarefa);   // se encontrar, retorna a tarefa
     } else {
+        // Erro 404: Not Found (Não encontrado)
         res.status(404).json({ erro: "Tarefa não encontrada" });
     }
 })
@@ -67,25 +69,31 @@ app.get('/tarefa/:id', (req, res) => {
 app.post('/criar-tarefa', (req, res) => {
     let tarefas = lerJson(arquivo);
 
-    // Encontra o maior ID existente
-    let maiorId = 0;
-    for (let i = 0; i < tarefas.length; i++) {
-        if (tarefas[i].id > maiorId) {
-            maiorId = tarefas[i].id;
+    // verifica se foi informado um "título" para a tarefa, e se o título não é vazio
+    if (req.body.titulo && req.body.titulo.trim() !== '') {
+        // Encontra o maior ID existente
+        let maiorId = 0;
+        for (let i = 0; i < tarefas.length; i++) {
+            if (tarefas[i].id > maiorId) {
+                maiorId = tarefas[i].id;
+            }
         }
+    
+        // cria um novo objeto com os valores recebidos e um novo ID baseado no maior ID existente
+        let novaTarefa = {
+            id: maiorId + 1,                        // maior id encontrado + 1
+            titulo: req.body.titulo,
+            descricao: req.body.descricao || '',    // se não for informada descrição, então será ''
+            feito: req.body.feito || false          // se não for informado o campo 'feito', então será false
+        };
+    
+        tarefas.push(novaTarefa);   // envia o novo objeto para o json
+        salvarJson(tarefas, arquivo);
+        res.json(novaTarefa);
+    } else {
+        // Erro 400: Bad Request (Requisição inválida)
+        res.status(400).json({ mensagem: "O título da tarefa é obrigatório" });
     }
-
-    // cria um novo objeto com os valores recebidos e um novo ID baseado no maior ID existente
-    let novaTarefa = {
-        id: maiorId + 1,                        // maior id encontrado + 1
-        titulo: req.body.titulo,
-        descricao: req.body.descricao || '',    // se não for informada descrição, então será ''
-        feito: req.body.feito || false          // se não for informado o campo 'feito', então será false
-    };
-
-    tarefas.push(novaTarefa);   // envia o novo objeto para o json
-    salvarJson(tarefas, arquivo);
-    res.json(novaTarefa);
 })
 
 
@@ -109,6 +117,7 @@ app.put('/atualizar-tarefa/:id', (req, res) => {
         salvarJson(tarefas, arquivo);
         res.json(tarefaAtualizada);
     } else {
+        // Erro 404: Not Found (Não encontrado)
         res.status(404).json({ erro: "Tarefa não encontrada" });
     }
 })
@@ -125,6 +134,7 @@ app.delete('/deletar-tarefa/:id', (req, res) => {
         salvarJson(tarefasAtualizadas, arquivo);
         res.json({ mensagem: "Tarefa excluída com sucesso" });
     } else {
+        // Erro 404: Not Found (Não encontrado)
         res.status(404).json({ erro: "Tarefa não encontrada" });
     }
 })
