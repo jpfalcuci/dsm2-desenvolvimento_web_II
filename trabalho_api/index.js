@@ -21,6 +21,9 @@ app.listen(porta, () => {
 
 
 function lerJson(caminhoArquivo) {
+    if (!fs.existsSync(caminhoArquivo)) {               // verifica se o arquivo existe
+        fs.writeFileSync(caminhoArquivo, '[]', encode); // se não existir, cria um novo arquivo com um array vazio
+    }
     try {
         const arquivo = fs.readFileSync(caminhoArquivo, encode);
         const conteudo = JSON.parse(arquivo);
