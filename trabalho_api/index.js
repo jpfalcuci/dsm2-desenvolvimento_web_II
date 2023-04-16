@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const fs = require('fs');                   // pacote fs para ler e gravar arquivos
+const fs = require("fs");                   // pacote fs para ler e gravar arquivos
 const bodyParser = require("body-parser");  // pacote body-parser para analisar o corpo das solicitações HTTP
 const cors = require("cors");               // pacote cors para permitir solicitações de origens diferentes
 
@@ -17,17 +17,40 @@ app.listen(porta, () => {
 });
 
 
+    // FUNÇÕES
+
+
+function lerJson(caminhoArquivo) {
+    try {
+        const arquivo = fs.readFileSync(caminhoArquivo, encode);
+        const conteudo = JSON.parse(arquivo);
+        return conteudo;
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+}
+
+function salvarJson(objeto, caminhoArquivo) {
+    fs.writeFileSync(caminhoArquivo, JSON.stringify(objeto));
+}
+
+
     // MÉTODOS
 
 
-app.get('/', (req, res) => {
-    let tarefas = JSON.parse(fs.readFileSync(arquivo, encode)); // lê o arquivo json
-    res.json(tarefas);
+app.get('/', (req, res) => { 
+    let tarefas = lerJson(arquivo);
+    if (tarefas) {
+        res.json(tarefas);
+    } else {
+        res.status(500).json({ erro: "Erro ao ler arquivo" });
+    }
 })
 
 
 app.get('/tarefa/:id', (req, res) => {
-    let tarefas = JSON.parse(fs.readFileSync(arquivo, encode));         // lê o arquivo json
+    let tarefas = lerJson(arquivo);
     let tarefa = tarefas.find(tarefa => tarefa.id == req.params.id);    // encontra a tarefa que tem o ID informado
 
     if (tarefa) {
@@ -39,7 +62,7 @@ app.get('/tarefa/:id', (req, res) => {
 
 
 app.post('/criar-tarefa', (req, res) => {
-    let tarefas = JSON.parse(fs.readFileSync(arquivo, encode)); // lê o arquivo json
+    let tarefas = lerJson(arquivo);
 
     // Encontra o maior ID existente
     let maiorId = 0;
@@ -58,13 +81,13 @@ app.post('/criar-tarefa', (req, res) => {
     };
 
     tarefas.push(novaTarefa);   // envia o novo objeto para o json
-    fs.writeFileSync(arquivo, JSON.stringify(tarefas)); // substitui o conteúdo do json com o novo objeto
+    salvarJson(tarefas, arquivo);
     res.json(novaTarefa);
 })
 
 
 app.put('/atualizar-tarefa/:id', (req, res) => {
-    let tarefas = JSON.parse(fs.readFileSync(arquivo, encode)); // lê o arquivo json
+    let tarefas = lerJson(arquivo);
 
     // coleta a posição do item do ID informado
     let index = tarefas.findIndex(tarefa => tarefa.id == req.params.id);
@@ -80,7 +103,7 @@ app.put('/atualizar-tarefa/:id', (req, res) => {
         };
 
         tarefas[index] = tarefaAtualizada;                  // atualiza o item do json, usando o index
-        fs.writeFileSync(arquivo, JSON.stringify(tarefas)); // substitui o conteúdo do json com o novo objeto
+        salvarJson(tarefas, arquivo);
         res.json(tarefaAtualizada);
     } else {
         res.status(404).json({ erro: "Tarefa não encontrada" });
@@ -89,14 +112,14 @@ app.put('/atualizar-tarefa/:id', (req, res) => {
 
 
 app.delete('/deletar-tarefa/:id', (req, res) => {
-    let tarefas = JSON.parse(fs.readFileSync(arquivo, encode)); // lê o arquivo json
+    let tarefas = lerJson(arquivo);
 
     // filtra selecionando todos os itens menos o item com o ID informado, e adiciona a um novo objeto
     let tarefasAtualizadas = tarefas.filter(tarefa => tarefa.id != req.params.id);
 
     // se o novo objeto for menor que o original, significa que um item foi removido
     if (tarefasAtualizadas.length < tarefas.length) {
-        fs.writeFileSync(arquivo, JSON.stringify(tarefasAtualizadas));  // substitui o conteúdo do json com o novo objeto
+        salvarJson(tarefasAtualizadas, arquivo);
         res.json({ mensagem: "Tarefa excluída com sucesso" });
     } else {
         res.status(404).json({ erro: "Tarefa não encontrada" });
