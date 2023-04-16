@@ -2,9 +2,11 @@ const express = require("express");
 const app = express();
 const fs = require('fs');                   // pacote fs para ler e gravar arquivos
 const bodyParser = require("body-parser");  // pacote body-parser para analisar o corpo das solicitações HTTP
+const cors = require("cors");               // pacote cors para permitir solicitações de origens diferentes
 
 app.use(bodyParser.urlencoded({ extended: false }));    // p/ analisar solicitações codificadas em url
 app.use(bodyParser.json());                             // p/ analisar solicitações JSON
+app.use(cors());
 
 const porta = 6660
 const arquivo = './tarefas.json';
