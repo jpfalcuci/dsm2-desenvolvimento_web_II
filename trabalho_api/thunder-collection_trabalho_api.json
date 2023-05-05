@@ -1,0 +1,89 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "trabalho_api",
+    "dateExported": "2023-05-05T23:36:46.774Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "09c2654f-038b-4428-87ad-84803af55e0b",
+            "colId": "f02d4025-9314-40b3-b497-3a060133a0af",
+            "containerId": "",
+            "name": "http://localhost:6660 criar",
+            "url": "http://localhost:6660/criar-tarefa",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-04-24T23:40:28.792Z",
+            "modified": "2023-04-24T23:40:28.792Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"titulo\": \"Criando nova tarefa\",\n  \"feito\": true\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "75b264c7-d972-41af-8d32-f8822845a91a",
+            "colId": "f02d4025-9314-40b3-b497-3a060133a0af",
+            "containerId": "",
+            "name": "http://localhost:6660 tarefa",
+            "url": "http://localhost:6660/tarefa/6",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-04-24T23:40:40.640Z",
+            "modified": "2023-04-24T23:40:40.640Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9f78da05-af20-4666-a70d-dc845e6b5511",
+            "colId": "f02d4025-9314-40b3-b497-3a060133a0af",
+            "containerId": "",
+            "name": "http://localhost:6660 atualizar",
+            "url": "http://localhost:6660/atualizar-tarefa/5",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-04-24T23:40:46.342Z",
+            "modified": "2023-04-24T23:40:46.342Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"titulo\": \"Título atualizado\",\n  \"feito\": true\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3c1bf481-05ba-467d-a47b-2f67f5b8650f",
+            "colId": "f02d4025-9314-40b3-b497-3a060133a0af",
+            "containerId": "",
+            "name": "http://localhost:6660 deletar",
+            "url": "http://localhost:6660/deletar-tarefa/6",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-04-24T23:40:57.729Z",
+            "modified": "2023-04-24T23:40:57.729Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c213f7fc-4cab-4f7a-986c-b5d2550261b5",
+            "colId": "f02d4025-9314-40b3-b497-3a060133a0af",
+            "containerId": "",
+            "name": "http://localhost:6660 todas as tarefas",
+            "url": "http://localhost:6660",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-04-24T23:41:02.244Z",
+            "modified": "2023-04-24T23:41:02.244Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

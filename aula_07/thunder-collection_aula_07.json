@@ -1,0 +1,89 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "aula_07",
+    "dateExported": "2023-05-05T23:36:16.126Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "aa75f255-7ba7-4afc-a3ab-bd1e9ab1253f",
+            "colId": "1d2a028d-aae0-4037-8a9f-9d5552a65f8f",
+            "containerId": "",
+            "name": "localhost:8080/updateUser",
+            "url": "localhost:8080/updateUser/2",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2023-04-28T23:40:10.655Z",
+            "modified": "2023-04-28T23:44:30.342Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\":\"Renata\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d205e0e0-ac39-41db-8d7f-f22f1563d3f0",
+            "colId": "1d2a028d-aae0-4037-8a9f-9d5552a65f8f",
+            "containerId": "",
+            "name": "localhost:8080/deleteUser",
+            "url": "localhost:8080/deleteUser/2",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2023-04-28T23:40:17.959Z",
+            "modified": "2023-04-28T23:44:45.050Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ba895deb-0172-4382-a1d9-7fc470070df0",
+            "colId": "1d2a028d-aae0-4037-8a9f-9d5552a65f8f",
+            "containerId": "",
+            "name": "localhost:8080/includeUser",
+            "url": "localhost:8080/includeUser",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-04-28T23:40:28.225Z",
+            "modified": "2023-04-28T23:44:20.613Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\":2,\n  \"nome\":\"Mariza\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4ba16998-304b-4218-a391-93ba897c911c",
+            "colId": "1d2a028d-aae0-4037-8a9f-9d5552a65f8f",
+            "containerId": "",
+            "name": "localhost:8080/getUsers",
+            "url": "localhost:8080/getUsers",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-04-28T23:40:42.075Z",
+            "modified": "2023-04-28T23:40:42.075Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e92ef7f8-ee57-47c7-94a0-33e707201d5b",
+            "colId": "1d2a028d-aae0-4037-8a9f-9d5552a65f8f",
+            "containerId": "",
+            "name": "localhost:8080/getUser",
+            "url": "localhost:8080/getUser/2",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-04-28T23:40:49.016Z",
+            "modified": "2023-04-28T23:44:37.566Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
