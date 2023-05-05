@@ -1,0 +1,42 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "aula_08",
+    "dateExported": "2023-05-05T23:34:59.446Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c62eb305-dc41-4048-a3c2-bd6cc5abec8c",
+            "colId": "aa937caa-3e8b-4ae4-b452-5c4d4cd84dc0",
+            "containerId": "",
+            "name": "localhost:8080/userProtegido",
+            "url": "localhost:8080/userProtegido",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-05-05T23:22:50.224Z",
+            "modified": "2023-05-05T23:22:50.224Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIzLCJuYW1lIjoiSm_Do28iLCJwYXNzd29yZCI6IjEyM0pvw6NvIiwiaWF0IjoxNjgzMzI4NDY2fQ.NTNm4Ci4GPEdxq1E2-M5sZSY2Y0YtyFQMKrMCrRYeqo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "47fc0d44-0ef9-42dc-b1f1-aa4bb1815fe4",
+            "colId": "aa937caa-3e8b-4ae4-b452-5c4d4cd84dc0",
+            "containerId": "",
+            "name": "localhost:8080/login",
+            "url": "localhost:8080/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-05-05T23:23:00.362Z",
+            "modified": "2023-05-05T23:23:00.362Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
