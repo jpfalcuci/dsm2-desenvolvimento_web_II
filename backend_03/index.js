@@ -43,7 +43,7 @@ function validatePasswd(passwd) {
 
 // homepage
 app.get("/", verifyToken, (req, res) => {
-
+    res.status(200).json({ message: "Homepage" });
 });
 
 // mostrar todos os usuários
@@ -72,7 +72,6 @@ app.post("/users", async (req, res) => {
         const client = await pool.connect();
         try {
             const { nome, user, email, passwd } = req.body;
-            const hashedPasswd = bcrypt.hashSync(passwd, parseInt(saltRounds));
             if (!validateNameAndUser(nome)) {
                 res.status(400).json({ message: "Nome inválido." });    // bad request
             }
@@ -85,7 +84,8 @@ app.post("/users", async (req, res) => {
             if (!validatePasswd(passwd)) {
                 res.status(400).json({ message: "Senha inválida." });   // bad request
             }
-            const result = await pool.query(`INSERT INTO users (nome, usuario, email, passwd) VALUES ('${nome}', '${user}', '${email}', '${hashedPasswd}') RETURNING *`);
+            const hashedPasswd = bcrypt.hashSync(passwd, parseInt(saltRounds));
+            const result = await pool.query(`INSERT INTO users (nome, usuario, email, passwd) VALUES ('${nome}', '${user}', '${email}', '${hashedPasswd}') RETURNING *`);            
             const newUser = result.rows[0];
             const token = jwt.sign({ id: newUser.id }, secret, { expiresIn: "1h" });
             res.status(201).json({ newUser, token });   // created
@@ -139,28 +139,41 @@ app.put("/users/:id", verifyToken, async (req, res) => {
         try {
             const { id } = req.params;
             const { nome, user, email, passwd } = req.body;
+
+            const updatedFields = {};
             if (nome) {
                 if (!validateNameAndUser(nome)) {
                     res.status(400).json({ message: "Nome inválido." });    // bad request
+                } else {
+                    updatedFields.nome = nome;
                 }
             }
             if (user) {
                 if (!validateNameAndUser(user)) {
                     res.status(400).json({ message: "Usuário inválido." }); // bad request
+                } else {
+                    updatedFields.usuario = user;
                 }
             }
             if (email) {
                 if (!validateEmail(email)) {
                     res.status(400).json({ message: "Email inválido." });   // bad request
+                } else {
+                    updatedFields.email = email;
                 }
             }
             if (passwd) {
                 if (!validatePasswd(passwd)) {
                     res.status(400).json({ message: "Senha inválida." });   // bad request
+                } else {
+                    updatedFields.passwd = bcrypt.hashSync(passwd, parseInt(saltRounds));
                 }
             }
-            const hashedPasswd = bcrypt.hashSync(passwd, parseInt(saltRounds));
-            const result = await client.query(`UPDATE users SET nome='${nome}', usuario='${user}', email='${email}', passwd='${hashedPasswd}' WHERE id='${id}' RETURNING *`);
+
+            const result = await client.query(`UPDATE users SET ${Object.keys(updatedFields)
+                .map(key => `${key}='${updatedFields[key]}'`)
+                .join(', ')} WHERE id='${id}' RETURNING *`);
+
             const updatedUser = result.rows[0];
             if (updatedUser) {
                 res.status(200).json({ message: "Usuário atualizado com sucesso.", updatedUser });  // ok

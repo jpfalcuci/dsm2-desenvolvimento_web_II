@@ -1,0 +1,123 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "backend_03",
+    "dateExported": "2023-05-14T23:13:10.498Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "fdfd7eef-6f94-4549-9dda-b10b3e101aa9",
+            "colId": "0ccaecff-0dd1-44d9-91a7-1267144b9d70",
+            "containerId": "",
+            "name": "deletar um usuário",
+            "url": "localhost:6660/users/9",
+            "method": "DELETE",
+            "sortNum": 10000,
+            "created": "2023-05-14T23:11:55.353Z",
+            "modified": "2023-05-14T23:11:55.353Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODQxMDQzMzksImV4cCI6MTY4NDEwNzkzOX0.Oig2msOz1-WD1T4PzpW9PD0AeGhMmtotzCEZfcevhEo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6c990846-af83-43cb-ae33-fd438c440dae",
+            "colId": "0ccaecff-0dd1-44d9-91a7-1267144b9d70",
+            "containerId": "",
+            "name": "atualizar um usuário",
+            "url": "localhost:6660/users/9",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2023-05-14T23:12:03.484Z",
+            "modified": "2023-05-14T23:12:03.484Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODQxMDQzMzksImV4cCI6MTY4NDEwNzkzOX0.Oig2msOz1-WD1T4PzpW9PD0AeGhMmtotzCEZfcevhEo"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"Nome atualizado\",\n  \"passwd\": \"nova_senha\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e7915680-1ba2-4c2e-b5b2-8ed5c5263055",
+            "colId": "0ccaecff-0dd1-44d9-91a7-1267144b9d70",
+            "containerId": "",
+            "name": "criar um usuário",
+            "url": "localhost:6660/users",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-05-14T23:12:15.252Z",
+            "modified": "2023-05-14T23:12:15.252Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\":\"Nome do usuário\",\n  \"user\":\"Username\",\n  \"email\":\"email@email.com\",\n  \"passwd\":\"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fe3a89eb-edeb-4980-9b03-a2c26ba8f84b",
+            "colId": "0ccaecff-0dd1-44d9-91a7-1267144b9d70",
+            "containerId": "",
+            "name": "homepage",
+            "url": "localhost:6660",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-05-14T23:12:19.616Z",
+            "modified": "2023-05-14T23:12:19.616Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODQxMDQwMzUsImV4cCI6MTY4NDEwNzYzNX0.0OeXZE5gE9vzxAA2tn8M0fTZN2-CMUv8YbmMq2PvQWE"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "af73420c-189f-4bf9-9d5a-b632a52c55dd",
+            "colId": "0ccaecff-0dd1-44d9-91a7-1267144b9d70",
+            "containerId": "",
+            "name": "login",
+            "url": "localhost:6660/login",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-05-14T23:12:29.049Z",
+            "modified": "2023-05-14T23:12:29.049Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"user\": \"jpfalcuci\",\n  \"passwd\": \"123abc\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8d5ca455-2018-4beb-ae02-746c8fda969b",
+            "colId": "0ccaecff-0dd1-44d9-91a7-1267144b9d70",
+            "containerId": "",
+            "name": "mostrar todos os usuários",
+            "url": "localhost:6660/users",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-05-14T23:12:35.016Z",
+            "modified": "2023-05-14T23:12:35.016Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
