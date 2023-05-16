@@ -1,8 +1,7 @@
 <template>
   <v-app>
-    <!-- <MenuLateral /> -->
     <v-main >
-      <v-container fluid class="pa-0" theme="dark">
+      <v-container fluid class="pa-0 bg-grey-lighten-4" theme="dark">
         <router-view />
       </v-container>
     </v-main>

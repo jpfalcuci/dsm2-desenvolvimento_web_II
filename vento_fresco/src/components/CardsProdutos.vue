@@ -7,13 +7,13 @@
         :src="src"
         cover
       ></v-img>
-      <v-card-title color="">{{ title }}</v-card-title>
+      <v-card-title class="text-capitalize">{{ title }}</v-card-title>
       <v-card-subtitle>{{ subtitle }}</v-card-subtitle>
       <v-card-actions class="d-flex justify-space-between">
-        <v-btn color="teal-darken-3">
+        <v-btn color="teal-darken-3" class="text-capitalize">
           Ligar / Desligar
         </v-btn>
-        <v-btn variant="tonal" class="bg-teal-darken-3">
+        <v-btn variant="tonal" class="bg-teal-darken-3 text-capitalize">
           Detalhes >
         </v-btn>
       </v-card-actions>

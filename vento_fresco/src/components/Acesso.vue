@@ -1,5 +1,5 @@
 <template>
-  <v-container class="bg-grey-lighten-5 ma-0 px-0 py-8 w-100 h-100">
+  <v-container class="bg-grey-lighten-4 ma-0 px-0 py-8 h-100" fluid>
     <v-card class="mx-auto px-6 py-6" max-width="344">
 
       <div class="d-flex flex-column">
@@ -69,7 +69,7 @@
 
         <div class="d-flex flex-column py-0">
           <v-checkbox label="Manter conectado" color="teal-darken-3" class="pa-0 ma-0" :class="{ 'd-none': esqueceu || cadastro }" density="compact"></v-checkbox>
-          <p class="mx-auto py-2 text-grey-darken-1" :class="{ 'd-none': login || esqueceu }" justify="center">Continuando, você concorda com nossos <a href="#" class="text-teal-darken-3">termos de serviço</a>.</p>
+          <p class="mx-auto py-2 text-grey-darken-1" :class="{ 'd-none': login || esqueceu }" justify="center">Continuando, você concorda com nossos <a href="#" class="text-teal-darken-3 text-decoration-none">termos de serviço</a>.</p>
         </div>
       <br/>
 
@@ -81,6 +81,7 @@
           color="teal-darken-3"
           type="submit"
           variant="elevated"
+          class="text-capitalize"
           :to="esqueceu ? 'login' : 'meusprodutos'"
         >
           {{ botaoAcao }}
@@ -97,6 +98,7 @@
           variant="outlined"
           prepend-icon="mdi-google"
           to="meusprodutos"
+          class="text-capitalize"
           :class="{ 'd-none': esqueceu }"
         >
           {{ botaoAcao }} com Google
@@ -104,9 +106,9 @@
       </v-form>
 
       <div class="d-flex flex-column pt-3">
-        <p class="mx-auto py-2 text-grey-darken-1" :class="{ 'd-none': cadastro || esqueceu }" justify="center"><a href="/cadastro" class="text-grey-darken-1">Criar conta</a></p>
-        <p class="mx-auto py-2 text-grey-darken-1" :class="{ 'd-none': login || esqueceu }" justify="center">Já tem uma conta? <a href="/login" class="text-teal-darken-3">Entrar</a></p>
-        <p class="mx-auto py-2 text-grey-darken-1" :class="{ 'd-none': cadastro || esqueceu }" justify="center"><a href="/resetsenha" class="text-teal-darken-3">Esqueceu sua senha?</a></p>
+        <p class="mx-auto py-2 text-grey-darken-1" :class="{ 'd-none': cadastro || esqueceu }" justify="center"><a href="/cadastro" class="text-grey-darken-1 text-decoration-none">Criar conta</a></p>
+        <p class="mx-auto py-2 text-grey-darken-1" :class="{ 'd-none': login || esqueceu }" justify="center">Já tem uma conta? <a href="/login" class="text-teal-darken-3 text-decoration-none">Entrar</a></p>
+        <p class="mx-auto py-2 text-grey-darken-1" :class="{ 'd-none': cadastro || esqueceu }" justify="center"><a href="/resetsenha" class="text-teal-darken-3 text-decoration-none">Esqueceu sua senha?</a></p>
       </div>
 
     </v-card>
