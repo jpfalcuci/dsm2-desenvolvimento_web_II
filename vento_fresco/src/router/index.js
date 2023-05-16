@@ -19,8 +19,8 @@ const routes = [
     children: [
       {
         path: '',
-        name: 'Login',
-        component: () => import('@/views/Login.vue'),
+        name: 'AcessoLogin',
+        component: () => import('@/views/AcessoLogin.vue'),
       },
     ],
   },
@@ -30,19 +30,19 @@ const routes = [
     children: [
       {
         path: '',
-        name: 'Cadastro',
-        component: () => import('@/views/Cadastro.vue'),
+        name: 'AcessoCadastro',
+        component: () => import('@/views/AcessoCadastro.vue'),
       },
     ],
   },
   {
-    path: '/ResetSenha',
+    path: '/resetsenha',
     component: () => import('@/layouts/acesso/Acesso.vue'),
     children: [
       {
         path: '',
-        name: 'ResetSenha',
-        component: () => import('@/views/ResetSenha.vue'),
+        name: 'AcessoSenha',
+        component: () => import('@/views/AcessoSenha.vue'),
       },
     ],
   },
