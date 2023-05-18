@@ -1,26 +1,31 @@
-<!-- eslint-disable vue/valid-v-for -->
 <template>
 
-  <MenuSup />
-  <Carousel />
-  <Destaques />
-  <Gallery />
+  <LojaMenuSup />
+  <LojaCarousel />
+  <LojaDestaques />
+  <LojaProdutos />
+  <LojaSaibaMais />
+  <LojaRodape />  
 
 </template>
 
 <script>
-import MenuSup from '@/components/MenuSup.vue';
-import Carousel from '@/components/Carousel.vue';
-import Destaques from '@/components/Destaques.vue';
-import Gallery from '@/components/Gallery.vue';
+import LojaMenuSup from '@/components/LojaMenuSup.vue';
+import LojaCarousel from '@/components/LojaCarousel.vue';
+import LojaDestaques from '@/components/LojaDestaques.vue';
+import LojaProdutos from '@/components/LojaProdutos.vue';
+import LojaSaibaMais from '@/components/LojaSaibaMais.vue';
+import LojaRodape from '@/components/LojaRodape.vue';
 
 export default {
-  name: 'MeusProdutos',
+  name: 'Loja',
   components: {
-    MenuSup,
-    Carousel,
-    Destaques,
-    Gallery
+    LojaMenuSup,
+    LojaCarousel,
+    LojaDestaques,
+    LojaProdutos,
+    LojaSaibaMais,
+    LojaRodape
   },
 }
 </script>

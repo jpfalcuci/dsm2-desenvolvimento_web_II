@@ -14,7 +14,7 @@
           Ligar / Desligar
         </v-btn>
         <v-btn variant="tonal" class="bg-teal-darken-3 text-capitalize">
-          Detalhes >
+          Detalhes >>
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -23,7 +23,7 @@
 
 <script>
   export default {
-    name: 'CardsProdutos',
+    name: 'SysCardsProdutos',
     props: {
       src: String,
       title: String,

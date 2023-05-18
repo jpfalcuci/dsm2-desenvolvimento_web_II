@@ -61,6 +61,6 @@
 
 <script>
   export default({
-    name: 'Destaques',
+    name: 'LojaDestaques',
   })
 </script>

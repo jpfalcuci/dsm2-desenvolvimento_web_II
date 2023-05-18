@@ -30,7 +30,7 @@
 
 <script>
   export default {
-    name: 'MenuLateral',
+    name: 'SysMenuLateral',
     data() {
       return {
         menus: [

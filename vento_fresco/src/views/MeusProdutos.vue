@@ -3,7 +3,7 @@
       <v-sheet>
         <v-row class="bg-grey-lighten-5 justify-space-evenly ">
           <v-col v-for="(card, index) in cards" :key="index" cols="4">
-            <CardsProdutos :src="card.src" :title="card.title" :subtitle="card.subtitle" />
+            <SysCardsProdutos :src="card.src" :title="card.title" :subtitle="card.subtitle" />
           </v-col>
         </v-row>
       </v-sheet>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import CardsProdutos from '@/components/CardsProdutos.vue';
+  import SysCardsProdutos from '@/components/SysCardsProdutos.vue';
 
   let titulo = 'Top Ventilator';
   let subitutlo = 'Um ventilador moderno';
@@ -20,7 +20,7 @@
   export default {
       name: 'MeusProdutos',
       components: {
-        CardsProdutos
+        SysCardsProdutos
       },
       data() {
       return {

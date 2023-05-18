@@ -9,5 +9,5 @@
 </template>
 
 <script setup>
-  import MenuLateral from '@/components/MenuLateral.vue';
+
 </script>

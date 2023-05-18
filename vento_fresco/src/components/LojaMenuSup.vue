@@ -20,6 +20,6 @@
 
 <script>
   export default({
-    name: 'MenuSup',
+    name: 'LojaMenuSup',
   })
 </script>

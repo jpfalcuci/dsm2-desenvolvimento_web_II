@@ -22,6 +22,7 @@ import moment from 'moment';
 import 'moment/locale/pt-br';
 
 export default {
+    name: 'SysBarraSuperior',
     computed: {
         dataFormatada() {
             let data = moment().format("llll")
