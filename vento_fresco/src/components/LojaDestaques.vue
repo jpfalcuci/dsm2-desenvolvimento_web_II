@@ -14,7 +14,7 @@
       <v-img
         cover
         height="330"
-        :src="`/src/assets/destaques/0${n}.jpg`"
+        :src="`src/assets/destaques/0${n}.jpg`"
       ></v-img>
       <v-card-item>
         <v-card-title>Top Ventilator</v-card-title>
