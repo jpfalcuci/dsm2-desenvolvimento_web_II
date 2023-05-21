@@ -6,10 +6,17 @@
       </v-container>
 
       <v-container max-width="900px">
-        <v-row class="d-flex justify-space-around mb-10" v-for="n in 3" :key="n">
-          <LojaCardsProdutos v-for="n in 4" :key="n" />
+        <v-row class="d-flex justify-space-around mb-10">
+          <v-col
+            class="d-flex justify-space-evenly"
+            v-for="n in 12"
+            :key="n"
+            cols="3"
+          >
+            <LojaCardsProdutos :image="n" />
+          </v-col>
         </v-row>
-  
+
         <v-container class="d-flex align-center justify-center mb-5 mt-0 pt-0">
           <v-btn variant="outlined">Ver mais</v-btn>
         </v-container>
@@ -17,6 +24,7 @@
     </v-sheet>
   </v-container>
 </template>
+
 
 <script>
   import LojaCardsProdutos from '@/components/LojaCardsProdutos.vue';

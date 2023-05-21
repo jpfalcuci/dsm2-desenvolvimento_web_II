@@ -7,10 +7,11 @@
           <p class="font-weight-regular">Fresco</p>
         </div>
         <div class="d-flex align-center justify-space-evenly">
-          <v-btn class="text-capitalize mx-3" variant="plain">Home</v-btn>
-          <v-btn class="text-capitalize mx-3" variant="plain">Serviços</v-btn>
-          <v-btn class="text-capitalize mx-3" variant="plain">Produtos</v-btn>
-          <v-btn class="text-capitalize mx-3" variant="plain">Sobre</v-btn>
+          <v-btn 
+            class="text-capitalize mx-3" variant="plain" 
+            v-for="(menu, index) in menus" :key="index">
+            {{ menu }}
+          </v-btn>
         </div>
         <v-btn to="login" append-icon="mdi-login" class="text-capitalize" variant="plain">Login</v-btn>
       </v-container>
@@ -21,5 +22,10 @@
 <script>
   export default({
     name: 'LojaMenuSup',
+    data() {
+      return {
+        menus: ['Home', 'Serviços', 'Produtos', 'Sobre']
+      }
+    }
   })
 </script>

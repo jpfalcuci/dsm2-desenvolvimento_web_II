@@ -1,5 +1,7 @@
 # essentials
 
+## [Initial prototype](https://www.figma.com/proto/JqAJH0zawgWb1HtvvqtFJn/Vento-Fresco?node-id=616-5281&starting-point-node-id=616%3A5281&scaling=scale-down-width)
+
 ## Project setup
 
 ```

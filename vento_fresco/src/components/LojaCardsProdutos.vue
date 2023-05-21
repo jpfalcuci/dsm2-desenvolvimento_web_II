@@ -1,10 +1,11 @@
 <template>
-  <v-card width="250px" theme="light">
+  <v-card max-width="350px" theme="light">
     <v-img
-    src="https://d1o6h00a1h5k7q.cloudfront.net/imagens/img_m/8363/3660071.jpg"
+    :src="`src/assets/produtos/${image}.jpg`"
     class="align-end"
     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
     cover
+    height="300px"
     >
       <v-card-title class="text-white">Top Ventilator</v-card-title>
     </v-img>
@@ -23,6 +24,9 @@
 
 <script>
   export default({
-    name: 'LojaCardsProdutos'
+    name: 'LojaCardsProdutos',
+    props: {
+      image: String
+    }
   })
 </script>

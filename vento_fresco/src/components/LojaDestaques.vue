@@ -13,8 +13,8 @@
     >
       <v-img
         cover
-        height="250"
-        src="https://d1o6h00a1h5k7q.cloudfront.net/imagens/img_m/8363/3660071.jpg"
+        height="330"
+        :src="`/src/assets/destaques/0${n}.jpg`"
       ></v-img>
       <v-card-item>
         <v-card-title>Top Ventilator</v-card-title>

@@ -11,7 +11,7 @@
             single-line
             hide-details
             @click:append-inner="onClick"
-            class="pa-0 mr-10 rounded-lg"
+            class="pa-0 mr-10"
         ></v-text-field>
     </div>
   </v-app-bar>

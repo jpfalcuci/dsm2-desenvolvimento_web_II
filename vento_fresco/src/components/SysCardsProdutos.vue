@@ -3,7 +3,7 @@
     <v-card class="mx-auto rounded-lg" max-width="350">
       <v-img
         class="align-end text-white"
-        height="200"
+        height="250"
         :src="src"
         cover
       ></v-img>
