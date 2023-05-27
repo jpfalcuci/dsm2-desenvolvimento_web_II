@@ -4,7 +4,9 @@
 </script>
 
 <template>
-  <RegisterUser></RegisterUser>
+  <div>
+    <RegisterUser />
+  </div>
 </template>
 
 <style scoped>

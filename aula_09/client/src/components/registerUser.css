@@ -1,0 +1,59 @@
+h1 {
+    color: tomato;
+    margin-top: 0;
+}
+
+form {
+    display: grid;
+    grid-gap: 10px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+form input {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.user-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-item {
+    margin-bottom: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.user-email {
+    color: #888;
+}
+
+.user-list {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-list th,
+.user-list td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.edit-button {
+    margin-right: 20px;
+    background-color: teal;
+}
+
+.delete-button {
+    background-color: tomato;
+}
+
+.edit-button,
+.delete-button {
+    padding: 5px 10px;
+}

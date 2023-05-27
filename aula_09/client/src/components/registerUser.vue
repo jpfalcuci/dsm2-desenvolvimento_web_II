@@ -1,59 +1,38 @@
 <template>
-    <h1>Cadastro Usuários</h1>
-    <form @submit.prevent="registerUser">
+  <div>
+    <h1>Cadastro de usuários</h1>
 
-      <input type="text" v-model="nome" placeholder="Digite seu nome">
-      <input type="email" v-model="email" placeholder="Digite seu email">
-      <input type="password" v-model="senha" placeholder="Digite sua senha">
-
-      <button type="submit">Registrar</button>
+    <form @submit.prevent="registerOrUpdateUser">
+      <input type="text" v-model="nome" placeholder="Digite seu nome" />
+      <input type="email" v-model="email" placeholder="Digite seu email" />
+      <input type="password" v-model="password" placeholder="Digite sua senha" />
+      <button type="submit">{{ editMode ? "Atualizar" : "Registrar" }}</button>
     </form>
+
     <p>{{ message }}</p>
+
+    <table v-if="users.length" class="user-list">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="user in users" :key="user.id" class="user-item">
+          <td>{{ user.nome }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button @click="editUser(user)" class="edit-button">Editar</button>
+            <button @click="deleteUser(user)" class="delete-button">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
 </template>
-<script>
-  export default {
-    data() {
-      return {
-        nome: '',
-        email: '',
-        senha: '',
-        message: '',
-      }
-    },
-    methods: {
-      registerUser() {
-        const data = {
-          nome: this.nome,
-          email: this.email,
-          senha: this.senha
-        }
-        fetch("http://localhost:3000/api/registerUser", {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify(data)
-        })
-          .then(async (res) => {
-            this.message = await res.text();
-          })
-          .catch(async (err) => {
-            this.message = await err.text();
-          })
-      }
-    }
-}
-</script>
-<style scoped>
-h1 {
-  color: tomato;
-}
-form {
-  display: grid;
-  grid-gap: 10px;
-  width: 400px;
-  margin: 0 auto;
-}
-form input {
-  padding: 10px;
-  border-radius: 10px;
-}
-</style>
+
+<script src="./registerUser.js"></script>
+<style src="./registerUser.css" scoped></style>
