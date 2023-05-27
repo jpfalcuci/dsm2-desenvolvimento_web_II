@@ -13,7 +13,7 @@
             {{ menu }}
           </v-btn>
         </div>
-        <v-btn to="login" append-icon="mdi-login" class="text-capitalize" variant="plain">Login</v-btn>
+        <v-btn to="/acesso/login" append-icon="mdi-login" class="text-capitalize" variant="plain">Login</v-btn>
       </v-container>
     </v-app-bar>
   </v-container>

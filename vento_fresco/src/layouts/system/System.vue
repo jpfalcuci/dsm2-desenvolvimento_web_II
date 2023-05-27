@@ -11,6 +11,6 @@
 </template>
 
 <script setup>
-  import SysBarraSuperior from '@/components/SysBarraSuperior.vue'
-  import SysMenuLateral from '@/components/SysMenuLateral.vue';
+  import SysBarraSuperior from '@/components/sistema/SysBarraSuperior.vue'
+  import SysMenuLateral from '@/components/sistema/SysMenuLateral.vue';
 </script>

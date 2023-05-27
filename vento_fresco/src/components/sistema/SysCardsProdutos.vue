@@ -4,7 +4,7 @@
       <v-img
         class="align-end text-white"
         height="250"
-        :src="src"
+        :src="`../src/assets/produtos/${num}.jpg`"
         cover
       ></v-img>
       <v-card-title class="text-capitalize">{{ title }}</v-card-title>
@@ -25,9 +25,9 @@
   export default {
     name: 'SysCardsProdutos',
     props: {
-      src: String,
+      num: Number,
       title: String,
       subtitle: String
-    }
+    },
   }
 </script>

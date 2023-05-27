@@ -1,7 +1,6 @@
 <template>
   <v-btn
     :disabled="!form"
-    :loading="loading"
     :rules="[rules.required]"
     block
     color="teal-darken-3"

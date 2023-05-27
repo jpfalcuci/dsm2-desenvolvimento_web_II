@@ -35,14 +35,14 @@
       return {
         menus: [
           { icon: 'mdi-shopping', title: 'Loja', value: 'loja', path: '/' },
-          { icon: 'mdi-package', title: 'Meus Produtos', value: 'meusprodutos', path: '/meusprodutos' },
-          { icon: 'mdi-finance', title: 'Vendas', value: 'vendas', path: '/vendas' },
-          { icon: 'mdi-account-check', title: 'Perfis', value: 'perfis', path: '/perfis' },
-          { icon: 'mdi-account-group', title: 'Usuários', value: 'usuarios', path: '/usuarios' },
-          { icon: 'mdi-factory', title: 'Produção', value: 'producao', path: '/producao' },
-          { icon: 'mdi-screw-machine-flat-top', title: 'Insumos', value: 'insumos', path: '/insumos' },
-          { icon: 'mdi-fan', title: 'Produtos', value: 'produtos', path: '/produtos' },
-          { icon: 'mdi-cog', title: 'Configurações', value: 'configuracoes', path: '/configuracoes' }
+          { icon: 'mdi-package', title: 'Meus Produtos', value: 'meusprodutos', path: '/sistema/meusprodutos' },
+          { icon: 'mdi-finance', title: 'Vendas', value: 'vendas', path: '/sistema/vendas' },
+          { icon: 'mdi-account-check', title: 'Perfis', value: 'perfis', path: '/sistema/perfis' },
+          { icon: 'mdi-account-group', title: 'Usuários', value: 'usuarios', path: '/sistema/usuarios' },
+          { icon: 'mdi-factory', title: 'Produção', value: 'producao', path: '/sistema/producao' },
+          { icon: 'mdi-screw-machine-flat-top', title: 'Insumos', value: 'insumos', path: '/sistema/insumos' },
+          { icon: 'mdi-fan', title: 'Produtos', value: 'produtos', path: '/sistema/produtos' },
+          { icon: 'mdi-cog', title: 'Configurações', value: 'configuracoes', path: '/sistema/configuracoes' }
         ]
       }
     }

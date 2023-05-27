@@ -21,9 +21,9 @@
 </template>
 
 <script>
-  import AcessoLogo from '@/components/AcessoLogo.vue';
-  import AcessoEmail from '@/components/AcessoEmail.vue';
-  import AcessoBotaoPrincipal from '@/components/AcessoBotaoPrincipal.vue';
+  import AcessoLogo from '@/components/acesso/AcessoLogo.vue';
+  import AcessoEmail from '@/components/acesso/AcessoEmail.vue';
+  import AcessoBotaoPrincipal from '@/components/acesso/AcessoBotaoPrincipal.vue';
 
   export default {
   name: 'AcessoSenha',

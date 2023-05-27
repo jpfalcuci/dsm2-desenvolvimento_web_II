@@ -50,7 +50,7 @@
         <div>Um ventilador moderno para pessoas modernas.</div>
       </v-card-text>
       <div class="px-4 d-flex justify-center mb-3">
-        <v-chip-group v-model="selection">
+        <v-chip-group >
           <v-chip class="px-8">Ver coleção</v-chip>
         </v-chip-group>
       </div>

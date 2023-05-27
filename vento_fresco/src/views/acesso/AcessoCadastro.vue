@@ -20,7 +20,7 @@
           <p class="mx-auto py-2 mb-5 text-grey-darken-1" justify="center">Continuando, você concorda com nossos <a href="#" class="text-teal-darken-3 text-decoration-none">termos de serviço</a>.</p>
         </div>
 
-        <AcessoBotaoPrincipal :rota="'meusprodutos'" :botao-acao="'Cadastrar'" :form="form"/>
+        <AcessoBotaoPrincipal :rota="'/sistema/meusprodutos'" :botao-acao="'Cadastrar'" :form="form"/>
 
         <AcessoBotaoGoogle :botao-acao="'Cadastrar'" />
       </v-form>
@@ -34,12 +34,12 @@
 </template>
 
 <script>
-  import AcessoLogo from '@/components/AcessoLogo.vue';
-  import AcessoNome from '@/components/AcessoNome.vue';
-  import AcessoEmail from '@/components/AcessoEmail.vue';
-  import AcessoSenha from '@/components/AcessoSenha.vue';
-  import AcessoBotaoPrincipal from '@/components/AcessoBotaoPrincipal.vue';
-  import AcessoBotaoGoogle from '@/components/AcessoBotaoGoogle.vue';
+  import AcessoLogo from '@/components/acesso/AcessoLogo.vue';
+  import AcessoNome from '@/components/acesso/AcessoNome.vue';
+  import AcessoEmail from '@/components/acesso/AcessoEmail.vue';
+  import AcessoSenha from '@/components/acesso/AcessoSenha.vue';
+  import AcessoBotaoPrincipal from '@/components/acesso/AcessoBotaoPrincipal.vue';
+  import AcessoBotaoGoogle from '@/components/acesso/AcessoBotaoGoogle.vue';
 
   export default {
   name: 'AcessoCadastro',

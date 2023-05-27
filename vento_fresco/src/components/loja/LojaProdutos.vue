@@ -27,7 +27,7 @@
 
 
 <script>
-  import LojaCardsProdutos from '@/components/LojaCardsProdutos.vue';
+  import LojaCardsProdutos from '@/components/loja/LojaCardsProdutos.vue';
 
   export default({
     name: 'LojaProdutos',

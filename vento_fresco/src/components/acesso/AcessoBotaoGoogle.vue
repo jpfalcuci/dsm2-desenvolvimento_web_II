@@ -9,7 +9,7 @@
     type="submit"
     variant="outlined"
     prepend-icon="mdi-google"
-    to="meusprodutos"
+    to="/sistema/meusprodutos"
     class="text-capitalize"
   >
     {{ botaoAcao }} com Google

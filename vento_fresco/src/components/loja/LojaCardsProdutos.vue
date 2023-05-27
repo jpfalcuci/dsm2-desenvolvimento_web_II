@@ -1,7 +1,8 @@
 <template>
   <v-card max-width="350px" theme="light">
     <v-img
-    :src="`src/assets/produtos/${image}.jpg`"
+    :src="`../src/assets/produtos/${image}.jpg`"
+    :lazy-src="`../src/assets/produtos/${image}.jpg`"
     class="align-end"
     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
     cover
@@ -26,7 +27,10 @@
   export default({
     name: 'LojaCardsProdutos',
     props: {
-      image: String
+      image: {
+        type: [String,Number],
+        default: () => ''
+      }
     }
   })
 </script>

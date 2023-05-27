@@ -13,14 +13,14 @@
           <v-checkbox label="Manter conectado" color="teal-darken-3" class="pa-0 ma-0" density="compact"></v-checkbox>
         </div>
 
-        <AcessoBotaoPrincipal :rota="'meusprodutos'" :botao-acao="'Entrar'" :form="form"/>
+        <AcessoBotaoPrincipal :rota="'/sistema/meusprodutos'" :botao-acao="'Entrar'" :form="form"/>
 
         <AcessoBotaoGoogle :botao-acao="'Entrar'" />
       </v-form>
   
       <div class="d-flex flex-column pt-3">
-        <p class="mx-auto py-2 text-grey-darken-1" justify="center"><a href="cadastro" class="text-grey-darken-1 text-decoration-none">Criar conta</a></p>
-        <p class="mx-auto py-2 text-grey-darken-1" justify="center"><a href="resetsenha" class="text-teal-darken-3 text-decoration-none">Esqueceu sua senha?</a></p>
+        <p class="mx-auto py-2 text-grey-darken-1" justify="center"><a href="/acesso/cadastro" class="text-grey-darken-1 text-decoration-none">Criar conta</a></p>
+        <p class="mx-auto py-2 text-grey-darken-1" justify="center"><a href="/acesso/resetsenha" class="text-teal-darken-3 text-decoration-none">Esqueceu sua senha?</a></p>
       </div>
       
     </v-card>
@@ -28,11 +28,11 @@
 </template>
 
 <script>
-  import AcessoLogo from '@/components/AcessoLogo.vue';
-  import AcessoEmail from '@/components/AcessoEmail.vue';
-  import AcessoSenha from '@/components/AcessoSenha.vue';
-  import AcessoBotaoPrincipal from '@/components/AcessoBotaoPrincipal.vue';
-  import AcessoBotaoGoogle from '@/components/AcessoBotaoGoogle.vue';
+  import AcessoLogo from '@/components/acesso/AcessoLogo.vue';
+  import AcessoEmail from '@/components/acesso/AcessoEmail.vue';
+  import AcessoSenha from '@/components/acesso/AcessoSenha.vue';
+  import AcessoBotaoPrincipal from '@/components/acesso/AcessoBotaoPrincipal.vue';
+  import AcessoBotaoGoogle from '@/components/acesso/AcessoBotaoGoogle.vue';
 
   export default {
   name: 'AcessoLogin',

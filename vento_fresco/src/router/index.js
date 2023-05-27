@@ -1,5 +1,6 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
+import AcessoLogin from '@/views/acesso/AcessoLogin.vue'
 
 const routes = [
   {
@@ -9,128 +10,74 @@ const routes = [
       {
         path: '',
         name: 'Loja',
-        component: () => import('@/views/Loja.vue'),
+        component: () => import('@/views/loja/Loja.vue'),
       },
     ],
   },
   {
-    path: '/login',
+    path: '/acesso',
     component: () => import('@/layouts/acesso/Acesso.vue'),
     children: [
       {
-        path: '',
+        path: 'login',
         name: 'AcessoLogin',
-        component: () => import('@/views/AcessoLogin.vue'),
+        component: AcessoLogin,
       },
-    ],
-  },
-  {
-    path: '/cadastro',
-    component: () => import('@/layouts/acesso/Acesso.vue'),
-    children: [
       {
-        path: '',
+        path: 'cadastro',
         name: 'AcessoCadastro',
-        component: () => import('@/views/AcessoCadastro.vue'),
+        component: () => import('@/views/acesso/AcessoCadastro.vue'),
       },
-    ],
-  },
-  {
-    path: '/resetsenha',
-    component: () => import('@/layouts/acesso/Acesso.vue'),
-    children: [
       {
-        path: '',
+        path: 'resetsenha',
         name: 'AcessoSenha',
-        component: () => import('@/views/AcessoSenha.vue'),
+        component: () => import('@/views/acesso/AcessoSenha.vue'),
       },
     ],
   },
   {
-    path: '/meusprodutos',
+    path: '/sistema',
     component: () => import('@/layouts/system/System.vue'),
     children: [
       {
-        path: '',
+        path: 'meusprodutos',
         name: 'MeusProdutos',
-        component: () => import('@/views/MeusProdutos.vue'),
+        component: () => import('@/views/sistema/MeusProdutos.vue'),
       },
-    ],
-  },
-  {
-    path: '/vendas',
-    component: () => import('@/layouts/system/System.vue'),
-    children: [
       {
-        path: '',
+        path: 'vendas',
         name: 'Vendas',
-        component: () => import('@/views/Vendas.vue'),
+        component: () => import('@/views/sistema/Vendas.vue'),
       },
-    ],
-  },
-  {
-    path: '/perfis',
-    component: () => import('@/layouts/system/System.vue'),
-    children: [
       {
-        path: '',
+        path: 'perfis',
         name: 'Perfis',
-        component: () => import('@/views/Perfis.vue'),
+        component: () => import('@/views/sistema/Perfis.vue'),
       },
-    ],
-  },
-  {
-    path: '/usuarios',
-    component: () => import('@/layouts/system/System.vue'),
-    children: [
       {
-        path: '',
+        path: 'usuarios',
         name: 'Usuarios',
-        component: () => import('@/views/Usuarios.vue'),
+        component: () => import('@/views/sistema/Usuarios.vue'),
       },
-    ],
-  },
-  {
-    path: '/producao',
-    component: () => import('@/layouts/system/System.vue'),
-    children: [
       {
-        path: '',
+        path: 'producao',
         name: 'Producao',
-        component: () => import('@/views/Producao.vue'),
+        component: () => import('@/views/sistema/Producao.vue'),
       },
-    ],
-  },
-  {
-    path: '/insumos',
-    component: () => import('@/layouts/system/System.vue'),
-    children: [
       {
-        path: '',
+        path: 'insumos',
         name: 'Insumos',
-        component: () => import('@/views/Insumos.vue'),
+        component: () => import('@/views/sistema/Insumos.vue'),
       },
-    ],
-  },
-  {
-    path: '/produtos',
-    component: () => import('@/layouts/system/System.vue'),
-    children: [
       {
-        path: '',
+        path: 'produtos',
         name: 'Produtos',
-        component: () => import('@/views/Produtos.vue'),
+        component: () => import('@/views/sistema/Produtos.vue'),
       },
-    ],
-  },
-  {
-    path: '/configuracoes',
-    component: () => import('@/layouts/system/System.vue'),
-    children: [
       {
-        path: '',
+        path: 'configuracoes',
         name: 'Configuracoes',
-        component: () => import('@/views/Configuracoes.vue'),
+        component: () => import('@/views/sistema/Configuracoes.vue'),
       },
     ],
   },
